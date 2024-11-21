@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: appofapps
+  namespace: argocd
+  finalizers: []
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+  source:
+    path: argo-applications
+    repoURL: https://github.com/simonleebaker/argo-applications
+    targetRevision: HEAD
+  sources: []
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
