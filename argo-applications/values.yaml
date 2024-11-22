@@ -1,6 +1,6 @@
 deploy:
-  helmWebAppDev: true
-  kustomWebAppDev: true
+  helmWebAppDev: false
+  kustomWebAppDev: false
   productsApi: true
   redis: true
   vault: true
