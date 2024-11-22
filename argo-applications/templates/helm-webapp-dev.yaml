@@ -13,6 +13,9 @@ spec:
     repoURL: https://github.com/simonleebaker/argo-examples
     targetRevision: HEAD
     path: helm-webapp
+    helm:
+      values: |-
+        {{- toYaml .Values | nindent 8 }}
   destination:
     server: https://kubernetes.default.svc
     namespace: dev

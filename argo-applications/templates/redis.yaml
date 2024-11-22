@@ -11,6 +11,9 @@ spec:
     repoURL: https://github.com/simonleebaker/argo-applications
     targetRevision: HEAD
     path: apps/redis
+    helm:
+      values: |-
+        {{- toYaml .Values | nindent 8 }}
   destination:
     server: https://kubernetes.default.svc
     namespace: dev

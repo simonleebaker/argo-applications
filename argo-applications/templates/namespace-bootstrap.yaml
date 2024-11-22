@@ -13,6 +13,9 @@ spec:
     repoURL: https://github.com/simonleebaker/argo-applications
     targetRevision: HEAD
     path: apps/namespace-bootstrap
+    helm:
+      values: |-
+        {{- toYaml .Values | nindent 8 }}
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
